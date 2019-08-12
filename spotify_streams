@@ -9,13 +9,13 @@ from dateutil.relativedelta import *
 # Extract a list of dates 30 days from today
 list_date = []
 
-for i in range(730):
+for i in range(30):
     list_date.append(datetime.now().date() + relativedelta(days=-i))
 
 # Retrieve info from Spotify url (30 days) and convert it to DataFrame
 spotify_data = pd.DataFrame()
 
-for i in range(2,730):
+for i in range(2,30):
     url = 'https://spotifycharts.com/regional/us/daily/' + str(list_date[i]) + '/download'
     r = requests.get(url)
     s = r.text
